@@ -5,6 +5,7 @@
 |What                          |Status|
 |------------------------------|------|
 |Generate password for new user|  done|
+|Send e-mail with credentials  |  done|
 |Optional keys for groups, dir's & etc| in work|
 
 ###`test_hdd` - this script can help you find a good HDD, which has no realloc, pending and have a work under 10k hours
