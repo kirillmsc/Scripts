@@ -17,6 +17,7 @@ line=`cat $1_$date.txt | wc -l`
  
 curl -d "text=$1 - Done! Found $line strings. Check E-Mail to see results of the task" http://sms.ru/sms/send\?api_id= ****API_KEY****\&to=****PHONE_NUMBER****
  
+
 #$1 - объект грепа
 #$2 - место грепа 
 #$3 - дата грепа (много архивов с разными датами)
