@@ -6,7 +6,7 @@ echo "Where I shall grep?"
 read $2
 echo "What date I shall grep?"
 read $3
-echo "On what e-mail I shall send results of grep?"
+echo "On what e-mail I can send results of grep?"
 read $4
 echo "Ok"
 date=$(date +%Y%m%d$s)
