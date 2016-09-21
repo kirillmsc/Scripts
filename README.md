@@ -10,9 +10,3 @@
 
 `test_hdd` - this script can help you find a good HDD, which has no realloc, pending and have a work under 10k hours
 ----------
-
-`grep_mail_log` - grep some information in mail logs
-----------
-
-`double_grep_mail_log` - another grep mail log
-----------
