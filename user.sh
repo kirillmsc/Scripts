@@ -9,10 +9,10 @@ echo "Enter e-mail (script will send you your password"
 read $email
 #Проверяем пароль на пустоту, если он пустой генерируем рандомный пароль из 8-ми символов (если нужно больше исправить тут (!!)__-c${1:-8}__(!!) )
 #Пароль генерируется из заглавных / строчных букв и цифр.
-if [ -z "$password" ]; 
+if [ -z "$password" ];
 then
-	password=$(cat /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c${1:-8}); 
-	echo "$username $password" 
+	password=$(cat /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c${1:-8});
+	echo "$username $password"
 else
 	echo "$username $password"
 fi
