@@ -17,4 +17,4 @@ else
 fi
 useradd $username -p $password -d /$username
 echo "Done" 
-mail $username $password -S "Credentials" $email
+mail -s "Login && Pass" $username $password $email
