@@ -10,7 +10,7 @@ read $email
 #Пароль генерируется из заглавных / строчных букв и цифр.
 if [ -z "$password" ]; 
 then
-	password=$(cat /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c${1:-8}); 
+	password=$(cat /dev/urandom | tr -dc A-Z-a-z-0-9 | head -c${1:-8}); 
 	echo "$username $password" 
 else
 	echo "$username $password"
