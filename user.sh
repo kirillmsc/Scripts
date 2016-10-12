@@ -28,4 +28,4 @@ else
 fi
 useradd $username -p $password -d /$username
 echo "Done" 
-mail -s "Login && Pass" $username $password $email
+echo $username $password | mail -s "Login && Pass" $email
