@@ -2,6 +2,17 @@
 
 echo "Enter USERNAME"
 read username
+#
+id $username >/dev/null 2>&1
+if [ $? -eq 0 ]; 
+	then
+		echo "Username already exist "
+		echo "Please, type another name for new user "
+		read username
+	else
+		echo "Ok, username doesn't exist "
+
+fi
 echo "Enter PASSWORD (if you want to generate password for "$username" press ENTER)"
 read password
 echo "Enter e-mail (script will send you your password)"
