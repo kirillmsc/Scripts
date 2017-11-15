@@ -11,10 +11,10 @@ do
 	HOURS=$(echo $SMART | awk '{print $23}');		#work on Hours
 	PENDI=$(echo $SMART | awk '{print $43}');		#pendings
 	SERIAL=$(echo $SMART |  awk '{print $3}');
-if  [ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 10000 ] && [ "$PENDI" == 0 ] && [ "$sd" == "/dev/sda" ];
+if  [ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 50000 ] && [ "$PENDI" == 0 ] && [ "$sd" == "/dev/sda" ];
 then
 echo "sda" ;
-elif [ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 10000 ] && [ "$PENDI" == 0 ];
+elif [ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 50000 ] && [ "$PENDI" == 0 ];
 then
 echo "$SERIAL: $REALS; $REALE; $HOURS; $PENDI" >> /root/good;
 else
