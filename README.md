@@ -8,7 +8,7 @@
 |Send username & password via e-mail  |  done|
 |Optional keys for groups, dir's & etc| in work|
 
-[`test_hdd`](https://github.com/kirillmsc/Scripts/blob/master/test_hdd.sh) - this script can help you find a good HDD, which has no realloc, pending and have a work under 10k hours
+[`test_hdd`](https://github.com/kirillmsc/Scripts/blob/master/test_hdd.sh) - this script can help you find a good HDD, which has no realloc, pending and have a work under 50k hours
 ----------
 [`hdd_mon.sh`](https://github.com/kirillmsc/Scripts/blob/master/hdd_mon.sh) - this script monitors HDD's serial numbers for changes make list with serial numbers and if it changed - save diffrenes in file
 ----------
