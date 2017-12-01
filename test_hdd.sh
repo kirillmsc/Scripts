@@ -13,27 +13,19 @@ for sd in /dev/sd*[a-z];
 		PENDI=$(echo $SMART | awk '{print $43}');		#pendings
 		SERIAL=$(echo $SMART |  awk '{print $3}');
 	if
-			[ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 50000 ] && [ "$PENDI" == 0 ] && [ "$sd" == "/dev/sda" ];
+			[ "$sd" == "/dev/sda" ];
 		then
-			echo "sda" ;
+			continue ;
 		elif
-			[ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 50000 ] && [ "$PENDI" == 0 ];
+			SPEED=$(dd if=$sd of=/dev/null bs=1M count=1000 |& grep "1.0 GB" | awk -F " " '{print $8}');   # speed i/o
+			[ "$REALS" == 0 ] && [ "$REALE" == 0 ] && [ "$HOURS" -le 50000 ] && [ "$PENDI" == 0 ] && (( "$SPEED" > "100" ));
 		then
-			$SUCCESS
-			echo "$SERIAL: $REALS; $REALE; $HOURS; $PENDI; ${toend}[GOOD]" >> good;
-			$NORMAL
+			echo "$sd — $SERIAL: reallock: $REALS, $REALE; work — $HOURS; pendings — $PENDI; speed — $SPEED;   ${toend}[GOOD]" >> good;
+			dd if=$sd of=/dev/null bs=1M count=1000;
+	#		dd if=$sd of=/dev/null bs=1M seek=$(( $(blockdev —getsz $sd) - 1 )) count=1000;
 		else
-			$FAILURE
-			echo "BAD - $SERIAL: $REALS; $REALE; $HOURS; $PENDI; ${toend}[BAD]" >> bad;
+			echo "$sd — $SERIAL: reallock: $REALS, $REALE; work — $HOURS; pendings — $PENDI; speed — $SPEED; ${toend}[BAD]" >> bad;
 			dd if=$sd of=/dev/null bs=1M count=2000; #подсветка "плохих" дисков
-			$NORMAL
 	fi
 		#файлы good & bad лучше мониторить командой "tail -f" в двух разных окнах терминала
 	done
-
-
-# tasks:
-# Тестирование на скорость чтения / записи по каждому диску
-# Запись каждого теста в общие базы (все диски, хорошие, плохие)
-# Переезд скрипта с Bash на Python
-# Веб-морда для получения информации по дискам (Jango)
