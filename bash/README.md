@@ -4,7 +4,8 @@
 ```
 this script can help you find a good HDD, which has no realloc, pending and have a work under 50k hours
 Create two files: bad.txt and good.txt
-After script finish his work - in file you'll see serial numbers of HDD
+After script finish his work - in file you'll see serial numbers of HDD or you can view can watch result in realtime:
+tail -f good.txt | tail -f bad.txt
 ```
 ----------
 [`setup_ipmi`](https://github.com/kirillmsc/Scripts/blob/master/bash/setup_ipmi.sh)
