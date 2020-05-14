@@ -8,8 +8,8 @@ After script finish his work - in file you'll see serial numbers of HDD
 ```
 ----------
 [`setup_ipmi`](https://github.com/kirillmsc/Scripts/blob/master/bash/setup_ipmi.sh)
+this script work with this arguments:
 ```
-this script work with this arguments: /n
 --reset | rename ipmi user (new name - ADMIN)
 $1 | IPMI IP-address or hostname if your DNS can return IP by FQDN
 $2 | (optional) NETMASK IP, if empty - 255.255.255.0
